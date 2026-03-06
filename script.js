@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: "0px 0px -50px 0px"
     };
 
-    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+    const revealOnScroll = new IntersectionObserver(function (entries, observer) {
         entries.forEach(entry => {
             if (!entry.isIntersecting) {
                 return;
@@ -56,16 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Form Submission prevent default
     const form = document.getElementById('form-contact');
-    if(form) {
+    if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             const btn = form.querySelector('button');
             const originalText = btn.innerText;
-            btn.innerText = 'Отправлено!';
+            btn.innerText = 'Sent!';
             btn.style.background = '#00f260';
             btn.style.color = '#000';
             form.reset();
-            
+
             setTimeout(() => {
                 btn.innerText = originalText;
                 btn.style.background = '';
